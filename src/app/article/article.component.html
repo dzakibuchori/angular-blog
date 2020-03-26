@@ -1,0 +1,13 @@
+<h1>Home</h1>
+
+<div *ngFor="let post of postList">
+  <h3>
+    <a href="" [routerLink]="['/article/', post.id]">
+      {{ post.title }}
+    </a>
+  </h3>
+  <div>
+    {{ post.body }}
+  </div>
+  <small>created by {{ post.userId }}, {{ post.created_at }}</small>
+</div>

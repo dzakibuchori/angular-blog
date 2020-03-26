@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { Error404Component } from './error404/error404.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './admin/admin.module';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,11 @@ import { AdminModule } from './admin/admin.module';
     Error404Component
   ],
   imports: [
+    AdminModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AdminModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

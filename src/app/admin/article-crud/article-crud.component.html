@@ -1,0 +1,23 @@
+<h1 *ngIf="crud == 'view'">View Article</h1>
+<h1 *ngIf="crud == 'edit'">Edit Article</h1>
+<h1 *ngIf="crud == 'create'">Create New Article</h1>
+<form  *ngIf="crud == 'view' || crud == 'edit'" (ngSubmit)="edit(id)">
+  <label for="title">Title</label>
+  <input id="title" name="title" type="text" [(ngModel)]="title" [disabled]="crud == 'view'">
+
+  <label for="body">Description</label>
+  <input id="body" name="body" type="textarea" [(ngModel)]="body" [disabled]="crud == 'view'">
+  <button type="submit" [hidden]="crud == 'view'">Update</button>
+</form>
+
+<form  *ngIf="crud == 'create'" (ngSubmit)="create()">
+  <label for="title">Title</label>
+  <input id="title" name="title" type="text" [(ngModel)]="title">
+
+  <label for="body">Description</label>
+  <input id="body" name="body" type="textarea" [(ngModel)]="body">
+  <button type="submit">Save</button>
+  <p>{{ title }}</p>
+  <p>{{ body }}</p>
+</form>
+

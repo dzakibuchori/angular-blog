@@ -1,0 +1,28 @@
+<h1>Table Articles</h1>
+<button (click)="create()">Create New Post</button>
+<table style="border-width: medium">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>TITLE</th>
+      <th>ARTICLE</th>
+      <th>AUTHOR</th>
+      <th>CREATED DATE</th>
+      <th>ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of postList">
+      <td>{{ post.id }}</td>
+      <td>{{ post.title }}</td>
+      <td>{{ post.body }}</td>
+      <td>{{ post.userId }}</td>
+      <td>{{ post.created_at }}</td>
+      <td>
+        <button (click)="view(post.id)">view</button>&nbsp;
+        <button (click)="edit(post.id)">edit</button>&nbsp;
+        <button (click)="delete(post.id)">delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
